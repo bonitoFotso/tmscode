@@ -1,23 +1,47 @@
 {
   "name": "tmscode",
   "displayName": "TmsCode",
-  "description": "",
+  "description": "Extension for creating and managing components in Visual Studio Code.",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.86.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:tmscode.activateExtension"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "tmscode.createReactComponent",
-      "title": "Create React Component"
-    }
-  
-  ]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tmscode_activitybar",
+          "title": "Tms Code",
+          "icon": "path/to/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "tmscode_activitybar": [  
+        {
+          "id": "tmscode_view",
+          "name": "TmsCode View",
+          "icon": "path/to/icon.png"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "tmscode.createJsonFile",
+        "title": "Create JSON Component"
+      },
+      {
+        "command": "tmscode.listFilesInView",
+        "title": "Activate TmsCode Extension"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -25,12 +49,21 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.86.0",
+    "@types/vscode": "^1.60.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.6",
-    "@vscode/test-electron": "^2.3.9"
-  }
+    "eslint": "^8.2.0",
+    "typescript": "^4.4.3",
+    "@vscode/test-cli": "^1.0.0",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bonitoFotso/tmscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bonitoFotso/tmscode/issues"
+  },
+  "homepage": "https://github.com/bonitoFotso/tmscode#readme"
 }
